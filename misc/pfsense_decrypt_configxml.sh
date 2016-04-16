@@ -14,7 +14,6 @@ sed '1d' $1 > $TMP_FILE.base64
 sed -i '$d' $TMP_FILE.base64
 
 base64 -d $TMP_FILE.base64 > $TMP_FILE.enc
-
 openssl enc -d -aes-256-cbc -in $TMP_FILE.enc -out $1_dec.xml
 
 rm $TMP_FILE.*
